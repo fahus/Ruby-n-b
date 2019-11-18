@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/viewlistings' do
-  erb:index
+  erb:listings
 end
 
 
