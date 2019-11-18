@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require 'listings'
 
 class Rubynb < Sinatra::Base
 
@@ -8,7 +8,8 @@ get '/' do
 end
 
 get '/viewlistings' do
-  erb:index
+  @listings = Listing.all
+  erb:'listings'
 end
 
 
