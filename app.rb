@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'listings'
+require_relative './lib/listing'
 
 class Rubynb < Sinatra::Base
 
