@@ -1,1 +1,4 @@
 Step 1:
+CREATE DATABASE "airbnb-dev";
+
+CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2));
