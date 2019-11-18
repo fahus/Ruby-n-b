@@ -1,16 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Project/Week6/Ruby-n-b/spec/feature/listings_spec.rb": [
+      "/Users/student/Project/Week6/Ruby-n-b/spec/feature/view_listings_spec.rb": [
+        null,
         null,
         1,
         1,
+        null,
         1,
         1,
         null,
         null
+      ],
+      "/Users/student/Project/Week6/Ruby-n-b/spec/listing_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1574088818
+    "timestamp": 1574092209
   }
 }
