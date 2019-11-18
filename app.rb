@@ -3,7 +3,6 @@ require 'sinatra/base'
 
 class Rubynb < Sinatra::Base
 
-
 get '/' do
   "Hello, World"
 end
