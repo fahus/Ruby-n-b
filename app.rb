@@ -3,7 +3,6 @@ require 'listings'
 
 class Rubynb < Sinatra::Base
 
-
 get '/' do
   "Hello, World"
 end
