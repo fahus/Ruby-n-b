@@ -1,5 +1,12 @@
+# setup dev DB
 CREATE DATABASE "airbnb-dev";
 
 \c airbnb-dev;
 
+# setup test DB
+CREATE DATABASE "airbnb-test";
+
+\c airbnb-test;
+
+# Table create statements
 CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2));
