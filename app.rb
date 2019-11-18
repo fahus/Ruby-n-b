@@ -5,7 +5,7 @@ class Rubynb < Sinatra::Base
 
 
 get '/' do
-
+  "Hello, World"
 end
 
 get '/viewlistings' do
