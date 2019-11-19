@@ -1,0 +1,39 @@
+<style>
+  .signup {
+    height: 300px;
+    border: solid black 5px;
+    max-width:250px;
+    margin:0 auto;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-align-items: center;
+           align-items: center;
+   -webkit-justify-content: center;
+           justify-content: center;
+  }
+  h1{
+    text-align: center;
+  }
+  h3{
+    text-align: center;
+  }
+}
+</style>
+
+<h1>Welcome to Rubynb</h1>
+<h1>Feel at home, anywhere!</h1>
+
+<h3> Sign up to Rubynb </h3>
+
+<div class="signup" action="/signup" method="post">
+  <form>
+    Enter Email:<br>
+    <input type="text" name="email">  </input> <br>
+    Password:<br>
+     <input type="text" name="password" >  </input><br>
+    Re-enter Password: <br>
+    <input type="text" name="password_confirmation" > </input> <br>
+    Click to Signup: <br>
+    <input type="submit" value="Submit"></input>
+  </form>
+</div>
