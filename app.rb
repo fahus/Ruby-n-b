@@ -4,7 +4,7 @@ require_relative './lib/listing'
 class Rubynb < Sinatra::Base
 
 get '/' do
-  "Hello, World"
+  erb :index
 end
 
 get '/viewlistings' do
