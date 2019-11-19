@@ -12,7 +12,14 @@ get '/viewlistings' do
   erb:'listings'
 end
 
+get '/add' do
+  erb :'add_listing'
+end
 
+post '/addlistings' do
+  Listing.add(name: params['name'], description: params['description'], cost: params['cost'])
+  redirect ('/viewlistings')
+end
 
 run! if app_file == $0
 end
