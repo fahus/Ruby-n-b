@@ -14,7 +14,7 @@
 						<div class="media-body" style="vertical-align:top;">
 							<h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
 
-              <form action="/more_detail" method="GET">
+              <form action="/listing/<%=listing.id%>" method="GET">
                 <input type="submit"  value="Click here for information on <%=listing.name%>">
               </form>
 

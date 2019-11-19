@@ -22,7 +22,12 @@ post '/addlistings' do
 end
 
 
-get '/more_detail' do
+get '/listing/:id' do
+  @listings = Listing.all
+  @object = @listings.select do |listing|
+    listing.id == params[:id]
+  end.first
+  p @object
   erb:'more_detail'
 end
 
