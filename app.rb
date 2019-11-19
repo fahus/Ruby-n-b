@@ -1,15 +1,28 @@
 require 'sinatra/base'
 require_relative './lib/listing'
+require_relative './lib/user'
 
 class Rubynb < Sinatra::Base
+  enable :sessions
 
 get '/' do
-  erb :index
+  erb :signup
 end
 
 get '/viewlistings' do
   @listings = Listing.all
   erb:'listings'
+end
+
+post '/signup' do
+  @user = User.add(email: params['email'], password: params['password'])
+  session[:email] = @user.email
+  redirect '/confirmation'
+end
+
+get '/confirmation' do
+  @email = session[:email]
+  erb:'confirmation'
 end
 
 get '/add' do
@@ -18,7 +31,7 @@ end
 
 post '/addlistings' do
   Listing.add(name: params['name'], description: params['description'], price: params['price'])
-  redirect ('/viewlistings')
+  redirect '/viewlistings'
 end
 
 run! if app_file == $0
