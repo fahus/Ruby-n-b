@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/listing'
+require_relative './lib/user'
 
 class Rubynb < Sinatra::Base
   enable :sessions
@@ -14,13 +15,13 @@ get '/viewlistings' do
 end
 
 post '/signup' do
-  User.add(email: params['email'], password: params['password'])
-  # session[:email] = @user.email
+  @user = User.add(email: params['email'], password: params['password'])
+  session[:email] = @user.email
   redirect '/confirmation'
 end
 
 get '/confirmation' do
-  # @email = session[:email]
+  @email = session[:email]
   erb:'confirmation'
 end
 

@@ -1,7 +1,7 @@
 require_relative 'db_connection.rb'
 
 class User
-  attr_reader :email,:password
+  attr_reader :email, :password
 
   def initialize(id:,email:,password:)
     @id = id
