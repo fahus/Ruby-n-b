@@ -1,3 +1,4 @@
+require './spec/web_helpers'
 
 
 feature 'viewing listings' do
@@ -17,4 +18,11 @@ feature 'viewing listings' do
     expect(page).to have_content("1000.00")
   end
 
+  scenario 'displays multiple listings' do
+    create_listing
+    visit '/viewlistings'
+    expect(page).to have_content("Holiday Inn")
+    expect(page).to have_content("Cheap and cheerful, coffee and tea provided")
+    expect(page).to have_content("250.00")
+  end
 end
