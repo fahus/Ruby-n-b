@@ -13,12 +13,17 @@
 
 						<div class="media-body" style="vertical-align:top;">
 							<h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
-              <ul>
+
+              <form action="/more_detail" method="GET">
+                <input type="submit"  value="Click here for information on <%=listing.name%>">
+              </form>
+
+              <!-- <ul>
                   <li>
                     <%=listing.description%> | £<%=listing.price%>/per night
                   </li>
                   <li><a href="ali.phipps1@gmail.com"> Contact host </a></li>
-              </ul>
+              </ul> -->
               <div style="clear: left;"/>
               <div class="table">
               <ul class="nav nav-pills nav-pills-custom" id = "horizontal-list">

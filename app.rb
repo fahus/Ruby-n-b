@@ -21,5 +21,11 @@ post '/addlistings' do
   redirect ('/viewlistings')
 end
 
+
+get '/more_detail' do
+  erb:'more_detail'
+end
+
+
 run! if app_file == $0
 end
