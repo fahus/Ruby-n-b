@@ -37,6 +37,7 @@ require_relative "./setup_test_database"
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    # add_listings
   end
 
   # rspec-expectations config goes here. You can use an alternate
