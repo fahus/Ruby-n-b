@@ -17,6 +17,12 @@ I would like to see listings in more detail
 
 ```
 
+```
+As a guest, so I can request a property,
+I would like to see dates available
+
+```
+
 ### Sequence diagram:
 #### MVP Sequence diagram (Guest can view a listing on a listings board):
 ![thumbnail_IMG_0047](https://user-images.githubusercontent.com/33905131/69050361-d39cd980-09f9-11ea-9110-f79572ffa4bf.jpg)
