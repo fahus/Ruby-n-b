@@ -8,7 +8,6 @@ feature "Sign up" do
     fill_in("password_confirmation", with: "password")
     click_button("Submit")
     # then
-    expect(page).to have_content "welcome to Rubynb, you've signed up
-            successfully with email 'alistairphipps@gmail.com'"
+    expect(page).to have_content "Welcome to Rubynb, you've signed up successfully with email 'alistairphipps@gmail.com'"
   end
 end
