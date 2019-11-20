@@ -34,5 +34,15 @@ post '/addlistings' do
   redirect '/viewlistings'
 end
 
+
+get '/listing/:id' do
+  @listings = Listing.all
+  @object = @listings.select do |listing|
+    listing.id == params[:id]
+  end.first
+  erb:'more_detail'
+end
+
+
 run! if app_file == $0
 end
