@@ -30,7 +30,7 @@ get '/add' do
 end
 
 post '/addlistings' do
-  Listing.add(name: params['name'], description: params['description'], price: params['price'])
+  Listing.add(name: params['name'], description: params['description'], price: params['price'], date: params['date'])
   redirect '/viewlistings'
 end
 

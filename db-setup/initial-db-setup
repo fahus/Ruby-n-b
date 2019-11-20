@@ -9,6 +9,6 @@ CREATE DATABASE "airbnb-test";
 \c airbnb-test;
 
 # Table create statements
-CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2));
+CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2, date DATE));
 
 CREATE TABLE RUBYNB_USER (id SERIAL PRIMARY KEY, email VARCHAR(60),password VARCHAR(60));
