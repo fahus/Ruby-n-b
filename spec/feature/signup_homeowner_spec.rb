@@ -1,5 +1,5 @@
 feature "Sign up" do
-  scenario("add a homeowner") do
+  scenario "add a homeowner" do
     # given
     visit '/'
     # when
@@ -10,4 +10,17 @@ feature "Sign up" do
     # then
     expect(page).to have_content "Welcome to Rubynb, you've signed up successfully with email 'alistairphipps@gmail.com'"
   end
+
+  scenario "Add listing from homepage" do
+    visit '/confirmation'
+    click_button("Click here to add a listing")
+    expect(page).to have_content "Add Listings"
+  end
+
+  scenario "View listings from homepage" do
+    visit '/confirmation'
+    click_button("Click here to view listings")
+    expect(page).to have_content "View Listings"
+  end
+
 end
