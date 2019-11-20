@@ -1,8 +1,14 @@
 # Ruby-n-b
 
 ### User stories:
+
 ```
-As a user so I can find a space to stay,
+As a guest or homeowner, once I am logged in,
+I want to choose to view or add a listings
+```
+
+```
+As a guest, so I can find a space to stay,
 I would like to see one available space
 ```
 
