@@ -8,7 +8,7 @@ feature 'it shows specific listings in more detail' do
     expect(page).to have_content "1000.00"
   end
 
-  scenario 'shows Hotel California in more detail' do
+  scenario 'shows Holiday Inn in more detail' do
     create_listing
     visit ('/viewlistings')
     click_button 'Click here for information on Holiday Inn'
