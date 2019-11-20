@@ -9,11 +9,6 @@ get '/' do
   erb :signup
 end
 
-get '/viewlistings' do
-  @listings = Listing.all
-  erb:'listings'
-end
-
 post '/signup' do
   @user = User.add(email: params['email'], password: params['password'])
   session[:email] = @user.email
@@ -25,6 +20,11 @@ get '/confirmation' do
   erb:'confirmation'
 end
 
+get '/viewlistings' do
+  @listings = Listing.all
+  erb:'listings'
+end
+
 get '/add' do
   erb :'add_listing'
 end
@@ -34,7 +34,6 @@ post '/addlistings' do
   redirect '/viewlistings'
 end
 
-
 get '/listing/:id' do
   @listings = Listing.all
   @object = @listings.select do |listing|
@@ -42,6 +41,8 @@ get '/listing/:id' do
   end.first
   erb:'more_detail'
 end
+
+
 
 
 run! if app_file == $0
