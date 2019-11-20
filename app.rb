@@ -27,7 +27,6 @@ get '/listing/:id' do
   @object = @listings.select do |listing|
     listing.id == params[:id]
   end.first
-  p @object
   erb:'more_detail'
 end
 
