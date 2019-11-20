@@ -3,14 +3,15 @@ require 'dotenv/load'
 
 class Listing
 
-  attr_reader :id, :name, :description, :price, :date
+  attr_reader :id, :name, :description, :price, :start_date, :end_date
 
-  def initialize(id:, name:, description:, price:, date:)
+  def initialize(id:, name:, description:, price:, start_date:, end_date:)
     @id = id
     @name = name
     @description = description
     @price = price
-    @date = date
+    @start_date = start_date
+    @end_date = end_date
   end
 
   def self.all
@@ -18,12 +19,12 @@ class Listing
     result = DbConnection.query("SELECT * FROM LISTINGS;")
     result.map do |listing|
       Listing.new(id: listing["id"], name: listing["name"],
-        description: listing["description"], price: listing["price"], date: listing["date"])
+        description: listing["description"], price: listing["price"], start_date: listing["start_date"], end_date: listing["end_date"])
       end
     end
 
-    def self.add(name:, description:, price:, date:)
-      result = DbConnection.query("INSERT INTO listings (name, description, price, date) VALUES ('#{name}', '#{description}', '#{price}', '#{date}') RETURNING id, name, description, price, date;")
-      Listing.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], date: result[0]['date'])
+    def self.add(name:, description:, price:, start_date:, end_date:)
+      result = DbConnection.query("INSERT INTO listings (name, description, price, start_date, end_date) VALUES ('#{name}', '#{description}', '#{price}', '#{start_date}', '#{end_date}') RETURNING id, name, description, price, start_date, end_date;")
+      Listing.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
     end
   end

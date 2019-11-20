@@ -8,5 +8,5 @@ def setup_test_database
 end
 
 def add_listings
-  DbConnection.query("INSERT INTO listings(name, description, price, date) VALUES ('Hotel California', 'A lovely place to stay with lots of nice things like wifi and snacks', 1000.00, '2019-11-23')")
+  DbConnection.query("INSERT INTO listings(name, description, price, start_date, end_date) VALUES ('Hotel California', 'A lovely place to stay with lots of nice things like wifi and snacks', 1000.00, '2019-11-23', '2019-11-30')")
 end
