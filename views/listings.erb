@@ -18,12 +18,6 @@
       <input type="submit"  value="Click here for information on <%=listing.name%>">
     </form>
 
-    <!-- <ul>
-      <li>
-        <%=listing.description%> | £<%=listing.price%>/per night
-      </li>
-      <li><a href="ali.phipps1@gmail.com"> Contact host </a></li>
-    </ul> -->
     <div style="clear: left;"/>
     <div class="table">
       <ul class="nav nav-pills nav-pills-custom" id = "horizontal-list">
@@ -39,6 +33,6 @@
 </div>
 <% end %>
 
-<form action="/add" method="GET">
-  <input type="submit"  value="Click here to add a listing">
-</form>
+  <form action="/add" method="GET">
+    <input type="submit"  value="Click here to add a listing">
+  </form>
