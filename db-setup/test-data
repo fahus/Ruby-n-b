@@ -1,6 +1,10 @@
 
+INSERT INTO "public"."rubynb_user" ("id", "email", "password") VALUES ('1', 'alistairphipps@gmail.com', 'password');
+INSERT INTO "public"."rubynb_user" ("id", "email", "password") VALUES ('2', 'liat@gmail.com', 'password2');
 
-CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2));
 
-INSERT INTO "public"."listings" ("id", "name", "description", "price") VALUES ('1', 'Hotel California',
- 'A lovely place to stay with lots of nice things like wifi and snacks', '1000.00');
+INSERT INTO "public"."listings" ("id", "name", "description", "price", "owner_id") VALUES ('1', 'Hotel California',
+ 'A lovely place to stay with lots of nice things like wifi and snacks', '1000.00', 1);
+
+ INSERT INTO "public"."listings" ("id", "name", "description", "price") VALUES ('1', 'Hotel California',
+  'A lovely place to stay with lots of nice things like wifi and snacks', '1000.00');
