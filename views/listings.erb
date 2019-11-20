@@ -5,33 +5,38 @@
 
 <% @listings.each do |listing| %>
 <div class="media">
-            <div style="float:left;">
-              <a class="media-left" href="#fake">
-  							<img alt="" class="media-object img-rounded" src="http://placehold.it/64x64">
-  						</a>
-            </div>
+  <div style="float:left;">
+    <a class="media-left" href="#fake">
+      <img alt="" class="media-object img-rounded" src="http://placehold.it/64x64">
+    </a>
+  </div>
 
-						<div class="media-body" style="vertical-align:top;">
-							<h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
-              <ul>
-                  <li>
-                    <%=listing.description%> | £<%=listing.price%>/per night
-                  </li>
-                  <li><a href="ali.phipps1@gmail.com"> Contact host </a></li>
-              </ul>
-              <div style="clear: left;"/>
-              <div class="table">
-              <ul class="nav nav-pills nav-pills-custom" id = "horizontal-list">
-                <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
-              </ul>
-              </div>
+  <div class="media-body" style="vertical-align:top;">
+    <h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
 
-						</div>
+    <form action="/listing/<%=listing.id%>" method="GET">
+      <input type="submit"  value="Click here for information on <%=listing.name%>">
+    </form>
 
-					</div>
+    <!-- <ul>
+      <li>
+        <%=listing.description%> | £<%=listing.price%>/per night
+      </li>
+      <li><a href="ali.phipps1@gmail.com"> Contact host </a></li>
+    </ul> -->
+    <div style="clear: left;"/>
+    <div class="table">
+      <ul class="nav nav-pills nav-pills-custom" id = "horizontal-list">
+        <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
 <% end %>
 
 <form action="/add" method="GET">
