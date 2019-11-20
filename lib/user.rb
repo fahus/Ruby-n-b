@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require_relative 'db_connection.rb'
 
 class User
@@ -10,7 +11,7 @@ class User
   end
 
   def self.add(email:, password:)
-    DbConnection.setup("airbnb-test")
+    DbConnection.setup(ENV["DB_NAME"])
     result = DbConnection.query("INSERT INTO RUBYNB_USER (email, password) VALUES ('#{email}', '#{password}') RETURNING id, email, password;")
     User.new(id: result[0]['id'], email: result[0]['email'], password: result[0]['password'])
   end

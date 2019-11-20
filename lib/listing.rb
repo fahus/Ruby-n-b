@@ -1,4 +1,5 @@
 require_relative 'db_connection.rb'
+require 'dotenv/load'
 
 class Listing
 
@@ -12,7 +13,7 @@ class Listing
   end
 
   def self.all
-    DbConnection.setup("airbnb-test")
+    DbConnection.setup(ENV["DB_NAME"])
     result = DbConnection.query("SELECT * FROM LISTINGS;")
     result.map do |listing|
       Listing.new(id: listing["id"], name: listing["name"],
