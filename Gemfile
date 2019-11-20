@@ -9,6 +9,7 @@ gem 'pg'
 gem 'rspec'
 gem 'sinatra'
 gem 'rubocop'
+gem 'dotenv'
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
