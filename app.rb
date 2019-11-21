@@ -31,7 +31,9 @@ get '/add' do
 end
 
 post '/addlistings' do
+
   Listing.add(name: params['name'], description: params['description'], price: params['price'], owner_id: session[:user_id])
+
   redirect '/viewlistings'
 end
 

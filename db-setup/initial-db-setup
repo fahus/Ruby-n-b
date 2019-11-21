@@ -8,8 +8,14 @@ CREATE DATABASE "airbnb-test";
 
 \c airbnb-test;
 
+<<<<<<< HEAD
+# Table create statements
+CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2), start_date DATE, end_date DATE);
+=======
 # Table create statements RUN IN ORDER!!!!
 DROP TABLE LISTINGS;
 DROP TABLE RUBYNB_USER;
+>>>>>>> 90a66e4743ff53725cf950c96b204ea9f67a23b3
+
 CREATE TABLE RUBYNB_USER (id SERIAL PRIMARY KEY, email VARCHAR(60),password VARCHAR(60));
-CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2), OWNER_ID INTEGER REFERENCES rubynb_user(id));
+CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2), start_date DATE, end_date DATE, OWNER_ID INTEGER REFERENCES rubynb_user(id));
