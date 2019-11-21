@@ -16,14 +16,10 @@
       <li>host email address: <%=@user.email%></li>
     </ul>
 
-    check-in
-    <input type="date" id="start_date" name="start_date"
-    value="2019-11-20"
-    min="2019-11-20" max="2019-11-20">
-
     <input type="date" id="start" name="trip-start"
-       value="2019-11-20"
-       min=<%=@object.start_date%> max=<%=@object.end_date%>
+    value="2019-11-20"
+    min="2019-11-20" max='2019-11-23'
+    min=<%=@object.start_date%> max=<%=@object.end_date%>/>
 
   </div>
 
