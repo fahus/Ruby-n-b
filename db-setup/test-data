@@ -2,5 +2,9 @@
 
 CREATE TABLE listings(id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(500), price NUMERIC(10, 2));
 
+SET datestyle = "ISO, DMY";
+
 INSERT INTO "public"."listings" ("id", "name", "description", "price", "start_date", "end_date") VALUES ('1', 'Hotel California',
- 'A lovely place to stay with lots of nice things like wifi and snacks', '1000.00', '2019-11-23', '2019-11-30');
+ 'A lovely place to stay with lots of nice things like wifi and snacks', '1000.00', '23-11-2019', '30-11-2019');
+
+SET datestyle = default;

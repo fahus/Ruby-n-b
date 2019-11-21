@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'date'
 require_relative './lib/listing'
 require_relative './lib/user'
 
@@ -30,6 +31,7 @@ get '/add' do
 end
 
 post '/addlistings' do
+  p params
   Listing.add(name: params['name'], description: params['description'], price: params['price'], start_date: params['start_date'], end_date: params['end_date'])
   redirect '/viewlistings'
 end

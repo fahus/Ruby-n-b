@@ -2,8 +2,7 @@ require "db_connection"
 
 def setup_test_database
   DbConnection.setup(ENV["DB_NAME"])
-  DbConnection.query("TRUNCATE listings;")
-  DbConnection.query("TRUNCATE RUBYNB_USER;")
+  DbConnection.query("TRUNCATE listings,  RUBYNB_USER;")
   add_listings
 end
 
