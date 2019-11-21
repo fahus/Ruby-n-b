@@ -11,6 +11,21 @@
    -webkit-justify-content: center;
            justify-content: center;
   }
+
+  .password {
+    height: 100px;
+    border: solid black 5px;
+    max-width:250px;
+    margin:0 auto;
+    color: red;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-align-items: center;
+           align-items: center;
+   -webkit-justify-content: center;
+           justify-content: center;
+  }
+
   h1{
     text-align: center;
   }
@@ -35,8 +50,9 @@
     <input type="submit" value="Submit"/>
   </form>
 </div>
-  <%if @password_invalid %>
-<div class="password error">
-  Email or Password not valid
+
+<% if @password_invalid %>
+<div class="password">
+  <p>Email or Password not valid</p>
 </div>
-<%end%>
+<% end %>

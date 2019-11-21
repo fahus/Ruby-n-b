@@ -56,13 +56,13 @@ class Rubynb < Sinatra::Base
     @user = User.authenticate(email: params['email'], password: params['password'])
     p "puts user"
     p @user
-    if @user.nil?
-      @password_invalid = true
-    else
-      @password_invalid = false
-    session[:user_id] = @user.id
-    session[:email] = @user.email
+    if @user
+      session[:user_id] = @user.id
+      session[:email] = @user.email
       redirect '/viewlistings'
+    else
+        @password_invalid = true
+        erb :'login'
     end
   end
 
