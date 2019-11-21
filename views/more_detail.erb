@@ -13,13 +13,15 @@
       <li>
         <%=@object.description%> | £<%=@object.price%>/per night
       </li>
-      <li>host email address: <%=@user.email%></li>
     </ul>
 
-    <input type="date" id="start" name="trip-start"
-    value="2019-11-20"
-    min="2019-11-20" max='2019-11-23'
-    min=<%=@object.start_date%> max=<%=@object.end_date%>/>
+
+
+    <form action="/listing/select/<%=@object.id%>" method="post">
+      <input type="date" name="date" min="<%=@object.start_date%>" max="<%=@object.end_date%>"/>
+
+      <input type="submit"  value="Select Date">
+    </form>
 
   </div>
 
