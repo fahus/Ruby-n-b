@@ -12,6 +12,7 @@ end
 post '/signup' do
   @user = User.add(email: params['email'], password: params['password'])
   session[:email] = @user.email
+  session[:user_id] = @user.id
   redirect '/confirmation'
 end
 
@@ -30,7 +31,7 @@ get '/add' do
 end
 
 post '/addlistings' do
-  Listing.add(name: params['name'], description: params['description'], price: params['price'])
+  Listing.add(name: params['name'], description: params['description'], price: params['price'], owner_id: session[:user_id])
   redirect '/viewlistings'
 end
 
@@ -39,6 +40,8 @@ get '/listing/:id' do
   @object = @listings.select do |listing|
     listing.id == params[:id]
   end.first
+
+  @user = User.where(id: @object.owner_id)
   erb:'more_detail'
 end
 
