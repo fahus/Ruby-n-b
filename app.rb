@@ -47,15 +47,25 @@ class Rubynb < Sinatra::Base
   end
 
   get '/login' do
+    @password_invalid = false
     erb :'login'
+
   end
 
   post '/login' do
-    @user = User.add(email: params['email'], password: params['password'])
+    @user = User.authenticate(email: params['email'], password: params['password'])
+    p "puts user"
+    p @user
+    if @user.nil?
+      @password_invalid = true
+    else
+      @password_invalid = false
     session[:user_id] = @user.id
     session[:email] = @user.email
-    redirect '/viewlistings'
+      redirect '/viewlistings'
+    end
   end
+
 
 
 
