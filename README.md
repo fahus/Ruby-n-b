@@ -89,14 +89,14 @@ I want to see the space available until I approve the request for hire.
 
 #### Gems to install:
 
-gem 'capybara'
-gem 'launchy'
-gem 'pg'
-gem 'rspec'
-gem 'sinatra'
-gem 'rubocop'
-gem 'dotenv'
-gem 'sendgrid-ruby'
+* gem 'capybara'
+* gem 'launchy'
+* gem 'pg'
+* gem 'rspec'
+* gem 'sinatra'
+* gem 'rubocop'
+* gem 'dotenv'
+* gem 'sendgrid-ruby'
 
 #### Database Setup:
  Follow instructions in initial-db-setup
