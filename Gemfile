@@ -10,6 +10,7 @@ gem 'rspec'
 gem 'sinatra'
 gem 'rubocop'
 gem 'dotenv'
+gem 'sendgrid-ruby'
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
