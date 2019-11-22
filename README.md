@@ -3,8 +3,6 @@
 ### User stories:
 
 ```
-
-
 As a new user
 So I can choose to view or add listings,
 I need to be able to sign up
@@ -29,19 +27,16 @@ I would like to see one available space
 As a space-owner,
 So I can advertise a space,
 I would like be able to list a new space
-
 ```
 ```
 As a space-owner,
 If I have multiple rooms,
 I would like be able to list more than one space
-
 ```
 ```
 As a space-owner,
 So that I can give more information about the space,
 I would like to be able to describe it and set a price per night
-
 ```
 ```
 As a space-owner, so that my space is not double booked,
@@ -90,6 +85,26 @@ As a space-owner
 So that I can choose bookings that suit me
 I want to see the space available until I approve the request for hire.
 ```
+### How to run this program:
+
+#### Gems to install:
+
+gem 'capybara'
+gem 'launchy'
+gem 'pg'
+gem 'rspec'
+gem 'sinatra'
+gem 'rubocop'
+gem 'dotenv'
+gem 'sendgrid-ruby'
+
+#### Database Setup:
+ Follow instructions in initial-db-setup
+
+#### Email API
+
+Create an account with SENDGRID: https://signup.sendgrid.com/
+
 
 ### Sequence diagram:
 #### MVP Sequence diagram (Guest can view a listing on a listings board):

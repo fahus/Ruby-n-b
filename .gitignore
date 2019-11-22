@@ -1,3 +1,4 @@
 sendgrid.env
 
 echo "export SENDGRID_API_KEY='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'" > sendgrid.env
+sendgrid.env
