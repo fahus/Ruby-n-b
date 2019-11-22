@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/listing'
 require_relative './lib/user'
+require_relative './lib/mail'
 
 class Rubynb < Sinatra::Base
   enable :sessions
@@ -69,7 +70,11 @@ class Rubynb < Sinatra::Base
     @object = @listings.select do |listing|
       listing.id == params[:id]
     end.first
-    @user = User.where(id: @object.owner_id)
+    @homeowner = User.where(id: @object.owner_id)
+    Mail.send(to: @homeowner.email, reservation_date: @date, guest_email: session[:email])
+    p @homeowner.email
+    p @date
+    p session[:email]
     erb:'select_date'
   end
 
