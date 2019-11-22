@@ -1,38 +1,26 @@
-
+<html>
+<head>
+  <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+</head>
+<body>
 <h1> View Listings </h1>
 
-<!-- <h2>Hotel California</h2> -->
+<form action="/add" method="GET">
+  <input class="btn1" type="submit"  value="Click here to add a listing">
+</form>
 
 <% @listings.each do |listing| %>
 <div class="media">
-  <div style="float:left;">
-    <a class="media-left" href="#fake">
-      <img alt="" class="media-object img-rounded" src="http://placehold.it/64x64">
-    </a>
-  </div>
 
   <div class="media-body" style="vertical-align:top;">
     <h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
 
     <form action="/listing/<%=listing.id%>" method="GET">
-      <input type="submit"  value="Click here for information on <%=listing.name%>">
+      <input class="btn1" type="submit" id="<%=listing.name%>" value="Click here for info.">
     </form>
-
-    <div style="clear: left;"/>
-    <div class="table">
-      <ul class="nav nav-pills nav-pills-custom" id = "horizontal-list">
-        <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
-      </ul>
-    </div>
-
-  </div>
 
 </div>
 <% end %>
 
-<form action="/add" method="GET">
-  <input type="submit"  value="Click here to add a listing">
-</form>
+</body>
+</html>

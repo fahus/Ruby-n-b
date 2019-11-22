@@ -1,39 +1,53 @@
-<style>
-  .signup {
-    height: 300px;
-    border: solid black 5px;
-    max-width:250px;
-    margin:0 auto;
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-align-items: center;
-           align-items: center;
-   -webkit-justify-content: center;
-           justify-content: center;
-  }
-  h1{
-    text-align: center;
-  }
-  h3{
-    text-align: center;
-  }
-}
-</style>
+<html>
+<head>
+  <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+  <style>
 
-<h1>Welcome to Rubynb</h1>
-<h1>Feel at home, anywhere!</h1>
+    .signup {
+      height: 300px;
+      border: solid black 5px;
+      max-width:250px;
+      margin:0 auto;
+     display: -webkit-flex;
+     display:         flex;
+     -webkit-align-items: center;
+             align-items: center;
+     -webkit-justify-content: center;
+             justify-content: center;
+    }
+    h1{
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
+  }
+  </style>
 
-<h3> Sign up to Rubynb </h3>
+</head>
+<body>
+  <h1>Welcome to Rubynb</h1>
+  <h1>Feel at home, anywhere!</h1>
 
-<div class="signup">
-  <form action='/signup' method='post'>
-    Enter Email:<br>
-    <input type="text" name="email"/>  <br>
-    Password:<br>
-     <input type="text" name="password"/><br>
-    Re-enter Password: <br>
-    <input type="text" name="password_confirmation"/> <br>
-    Click to Signup: <br>
-    <input type="submit" value="Submit"/>
-  </form>
-</div>
+  <h3> Sign up to Rubynb </h3>
+
+  <div class="signup">
+    <form action='/signup' method='post'>
+      Enter Email:<br>
+      <input type="text" name="email"/>  <br>
+      Password:<br>
+       <input type="password" name="password"/><br>
+      Re-enter Password: <br>
+      <input type="password" name="password_confirmation"/> <br>
+      <br>
+      <input class="btn1" type="submit" value="Click to Signup"/>
+      <br>
+      <br>
+      <div class="">
+          <a href="/login">Click here to login</a>
+      </div>
+    </form>
+
+  </div>
+</body>
+</html>

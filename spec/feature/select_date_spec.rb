@@ -3,7 +3,7 @@ feature 'it shows confirmation for date' do
     allow(Mail).to receive(:send)
     create_user
     create_listing
-    click_button 'Click here for information on Holiday Inn'
+    click_button 'Holiday Inn'
     fill_in('date', with: '2019-12-01')
     click_button 'Select Date'
     expect(page).to have_content 'Holiday Inn'

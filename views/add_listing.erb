@@ -1,14 +1,24 @@
-<h1> Add Listings </h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+  </head>
+  <body>
+    <h1> Add Listings </h1>
 
-<form action='/addlistings' method='post'>
-  <input type='text' name='name' placeholder='name'/>
-  <input type='text' name='description' placeholder='description'/>
-  <input type='text' name='price' placeholder='price'/>
-  <input type='date' name='start_date' placeholder='start date'/>
-  <input type='date' name='end_date' placeholder='end date'/>
-  <input type='submit' value='Submit'/>
-</form>
-<br>
-<form action="/viewlistings" method="GET">
-  <input type="submit"  value="Click here to view listings">
-</form>
+    <form action='/addlistings' method='post'>
+      <input type='text' name='name' placeholder='name'/>
+      <input type='text' name='description' placeholder='description'/>
+      <input type='text' name='price' placeholder='price'/>
+      <input type='date' name='start_date' placeholder='start date'/>
+      <input type='date' name='end_date' placeholder='end date'/>
+      <input class="btn1" type='submit' value='Submit'/>
+    </form>
+    <br>
+    <form action="/viewlistings" method="GET">
+      <input class="btn1" type="submit"  value="Click here to view listings">
+    </form>
+  </body>
+</html>

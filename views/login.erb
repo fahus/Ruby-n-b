@@ -1,58 +1,71 @@
-<style>
-  .login {
-    height: 300px;
-    border: solid black 5px;
-    max-width:250px;
-    margin:0 auto;
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-align-items: center;
-           align-items: center;
-   -webkit-justify-content: center;
-           justify-content: center;
-  }
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+    <style>
+      .login {
+        height: 300px;
+        border: solid black 5px;
+        max-width:250px;
+        margin:0 auto;
+       display: -webkit-flex;
+       display:         flex;
+       -webkit-align-items: center;
+               align-items: center;
+       -webkit-justify-content: center;
+               justify-content: center;
+      }
 
-  .password {
-    height: 100px;
-    border: solid black 5px;
-    max-width:250px;
-    margin:0 auto;
-    color: red;
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-align-items: center;
-           align-items: center;
-   -webkit-justify-content: center;
-           justify-content: center;
-  }
+      .password {
+        height: 100px;
+        border: solid black 5px;
+        max-width:250px;
+        margin:0 auto;
+        color: red;
+       display: -webkit-flex;
+       display:         flex;
+       -webkit-align-items: center;
+               align-items: center;
+       -webkit-justify-content: center;
+               justify-content: center;
+      }
 
-  h1{
-    text-align: center;
-  }
-  h3{
-    text-align: center;
-  }
-}
-</style>
+      h1{
+        text-align: center;
+      }
+      h3{
+        text-align: center;
+      }
+    }
+    </style>
 
-<h1>Welcome to Rubynb</h1>
-<h1>Feel at home, anywhere!</h1>
+  </head>
 
-<h3> Login up to Rubynb </h3>
+  <body>
 
-<div class="login">
-  <form action='/login' method='post'>
-    Enter Email:<br>
-    <input type="text" name="email"/>  <br>
-    Password:<br>
-     <input type="password" name="password"/><br>
-    Click to Login: <br>
-    <input type="submit" value="Submit"/>
-  </form>
-</div>
+    <h1>Welcome to Rubynb</h1>
+    <h1>Feel at home, anywhere!</h1>
 
-<% if @password_invalid %>
-<div class="password">
-  <p>Email or Password not valid</p>
-</div>
-<% end %>
+    <h3> Login up to Rubynb </h3>
+
+    <div class="login">
+      <form action='/login' method='post'>
+        Enter Email:<br>
+        <input type="text" name="email"/>  <br>
+        Password:<br>
+         <input type="password" name="password"/><br>
+        Click to Login: <br>
+        <input class="btn1" type="submit" value="Submit"/>
+      </form>
+    </div>
+
+    <% if @password_invalid %>
+    <div class="password">
+      <p>Email or Password not valid</p>
+    </div>
+    <% end %>
+
+  </body>
+</html>
