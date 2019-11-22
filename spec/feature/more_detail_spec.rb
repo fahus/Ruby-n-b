@@ -12,7 +12,7 @@ feature 'it shows specific listings in more detail' do
     create_user
     create_listing
     visit ('/viewlistings')
-    click_button 'Click here for info.'
+    click_button "Holiday Inn"
     expect(page).to have_content "Holiday Inn"
     expect(page).to have_content "Cheap and cheerful, coffee and tea provided"
     expect(page).to have_content "250.00"

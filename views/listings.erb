@@ -5,25 +5,18 @@
 <body>
 <h1> View Listings </h1>
 
-<!-- <h2>Hotel California</h2> -->
-
 <form action="/add" method="GET">
   <input class="btn1" type="submit"  value="Click here to add a listing">
 </form>
 
 <% @listings.each do |listing| %>
 <div class="media">
-  <div style="float:left;">
-    <a class="media-left" href="#fake">
-      <img alt="" class="media-object img-rounded" src="http://placehold.it/64x64">
-    </a>
-  </div>
 
   <div class="media-body" style="vertical-align:top;">
     <h4 class="media-heading" padding-left: 50px><%=listing.name%></h4>
 
     <form action="/listing/<%=listing.id%>" method="GET">
-      <input class="btn1" type="submit" name="<%listing.name%>" value="Click here for info.">
+      <input class="btn1" type="submit" id="<%=listing.name%>" value="Click here for info.">
     </form>
 
 </div>
