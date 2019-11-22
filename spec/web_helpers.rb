@@ -3,7 +3,7 @@ def create_user
   fill_in("email", with: "alistairphipps@gmail.com")
   fill_in("password", with: "password")
   fill_in("password_confirmation", with: "password")
-  click_button("Submit")
+  click_button("Click to Signup")
 end
 
 def create_listing

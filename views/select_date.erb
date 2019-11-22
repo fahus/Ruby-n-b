@@ -1,11 +1,19 @@
-Thank you. You have requested <%=@object.name%> for <%=@date%>
-<br>
-<br>
-Contact homeowner at: <%=@user.email%>
+<html>
+<head>
+  <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+</head>
+<body>
+  Thank you. You have requested <%=@object.name%> for <%=@date%>
+  <br>
+  <br>
+  Contact homeowner at: <%=@user.email%>
 
-<br>
-<br>
+  <br>
+  <br>
 
-<form action="/viewlistings" method="GET">
-  <input type="submit"  value="Click here to view listings">
-</form>
+  <form action="/viewlistings" method="GET">
+    <input type="submit"  value="Click here to view listings">
+  </form>
+
+</body>
+</html>
