@@ -45,6 +45,24 @@ class Rubynb < Sinatra::Base
     erb:'more_detail'
   end
 
+  get '/login' do
+    @password_invalid = false
+    erb :'login'
+
+  end
+
+  post '/login' do
+    @user = User.authenticate(email: params['email'], password: params['password'])
+    if @user
+      session[:user_id] = @user.id
+      session[:email] = @user.email
+      redirect '/viewlistings'
+    else
+        @password_invalid = true
+        erb :'login'
+    end
+  end
+
   post '/listing/select/:id' do
     @date = params[:date]
     @listings = Listing.all

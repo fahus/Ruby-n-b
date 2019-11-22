@@ -10,6 +10,7 @@ feature 'viewing listings' do
 
 
   scenario 'displays multiple listings' do
+    create_user
     create_listing
     visit '/viewlistings'
     expect(page).to have_content("Holiday Inn")
