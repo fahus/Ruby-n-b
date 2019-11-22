@@ -4,17 +4,18 @@
   <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
 </head>
 <body>
+  <h1> Booking Confirmation</h1>
 
 Thank you. You have requested <%=@object.name%> for <%=@date%>
 <br>
 <br>
 An email has been sent to the homeowner for approval.
-  
+
   <br>
   <br>
 
   <form action="/viewlistings" method="GET">
-    <input type="submit"  value="Click here to view listings">
+    <input class="btn1" type="submit"  value="Click here to view listings">
   </form>
 
 </body>
