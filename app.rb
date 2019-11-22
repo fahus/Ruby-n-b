@@ -72,9 +72,6 @@ class Rubynb < Sinatra::Base
     end.first
     @homeowner = User.where(id: @object.owner_id)
     Mail.send(to: @homeowner.email, reservation_date: @date, guest_email: session[:email])
-    p @homeowner.email
-    p @date
-    p session[:email]
     erb:'select_date'
   end
 
