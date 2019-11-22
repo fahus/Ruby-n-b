@@ -6,7 +6,7 @@ def create_user
   click_button("Submit")
 end
 
-  def create_listing
+def create_listing
   click_button("Click here to add a listing")
   fill_in('name', with: 'Holiday Inn')
   fill_in('description', with: 'Cheap and cheerful, coffee and tea provided')
