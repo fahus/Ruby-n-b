@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'date'
 require_relative './lib/listing'
 require_relative './lib/user'
 
@@ -54,8 +53,6 @@ class Rubynb < Sinatra::Base
 
   post '/login' do
     @user = User.authenticate(email: params['email'], password: params['password'])
-    p "puts user"
-    p @user
     if @user
       session[:user_id] = @user.id
       session[:email] = @user.email
@@ -66,8 +63,15 @@ class Rubynb < Sinatra::Base
     end
   end
 
-
-
+  post '/listing/select/:id' do
+    @date = params[:date]
+    @listings = Listing.all
+    @object = @listings.select do |listing|
+      listing.id == params[:id]
+    end.first
+    @user = User.where(id: @object.owner_id)
+    erb:'select_date'
+  end
 
   run! if app_file == $0
 end
