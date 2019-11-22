@@ -1,34 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="styleSheet" type="text/css" href="<%= url("/styleSheet.css") %>">
+  </head>
+  <body>
+    <div class="media">
+      <div class="media-body" style="vertical-align:top;">
+        <h4 class="media-heading" padding-left: 50px><%=@object.name%></h4>
 
-<div class="media">
-  <div style="float:left;">
-    <a class="media-left" href="#fake">
-      <img alt="" class="media-object img-rounded" src="http://placehold.it/64x64">
-    </a>
-  </div>
+        <ul>
+          <li>
+            <%=@object.description%> | £<%=@object.price%>/per night
+          </li>
+        </ul>
+        <form action="/listing/select/<%=@object.id%>" method="post">
+          <input type="date" name="date" min="<%=@object.start_date%>" max="<%=@object.end_date%>"/>
 
-  <div class="media-body" style="vertical-align:top;">
-    <h4 class="media-heading" padding-left: 50px><%=@object.name%></h4>
+          <input class="btn1" type="submit"  value="Select Date">
+        </form>
 
-    <ul>
-      <li>
-        <%=@object.description%> | £<%=@object.price%>/per night
-      </li>
-    </ul>
+        <br>
 
+        <form action="/viewlistings" method="GET">
+          <input class="btn1" type="submit"  value="Click here to view listings">
+        </form>
 
+      </div>
 
-    <form action="/listing/select/<%=@object.id%>" method="post">
-      <input type="date" name="date" min="<%=@object.start_date%>" max="<%=@object.end_date%>"/>
+    </div>
 
-      <input type="submit"  value="Select Date">
-    </form>
-
-    <br>
-
-    <form action="/viewlistings" method="GET">
-      <input type="submit"  value="Click here to view listings">
-    </form>
-
-  </div>
-
-</div>
+  </body>
+</html>
