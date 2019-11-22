@@ -1,5 +1,6 @@
 feature 'it shows confirmation for date' do
   scenario 'it shows listing details when date requested' do
+    allow(Mail).to receive(:send)
     create_user
     create_listing
     click_button 'Click here for information on Holiday Inn'
