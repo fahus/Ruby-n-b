@@ -25,7 +25,8 @@ class Listing
   end
 
     def self.add(name:, description:, price:, start_date:, end_date:, owner_id:)
-      result = DbConnection.query("INSERT INTO listings (name, description, price, owner_id) VALUES ('#{name}', '#{description}', '#{price}', '#{owner_id}') RETURNING id, name, description, price, owner_id;")
+
+      result = DbConnection.query("INSERT INTO listings (name, description, price, start_date, end_date, owner_id) VALUES ('#{name}', '#{description}', '#{price}', '#{start_date}', '#{end_date}', '#{owner_id}') RETURNING id, name, description, price, start_date, end_date, owner_id;")
       Listing.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], owner_id: result[0]['owner_id'])
     end
 end

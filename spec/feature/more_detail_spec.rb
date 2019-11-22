@@ -16,6 +16,5 @@ feature 'it shows specific listings in more detail' do
     expect(page).to have_content "Holiday Inn"
     expect(page).to have_content "Cheap and cheerful, coffee and tea provided"
     expect(page).to have_content "250.00"
-    expect(page).to have_content "alistairphipps@gmail.com"
   end
 end
